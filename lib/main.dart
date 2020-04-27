@@ -3,23 +3,54 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+import 'package:flutter/painting.dart';
 
-void main() => runApp(MyApp());
+void main() =>
+    runApp(MaterialApp(
+      home: Home(),
+    ));
 
-class MyApp extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final wrodPair = WordPair.random();
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text(wrodPair.asPascalCase),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome toddd Flutter'),
+        centerTitle: true,
+        backgroundColor: Colors.red[700],
+      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 4,
+            child: Container(
+              padding: EdgeInsets.all(30.5),
+              color: Colors.green,
+              child: Text('1'),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(30.5),
+              color: Colors.cyan,
+              child: Text('2'),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.5),
+              color: Colors.blueGrey,
+              child: Text('3'),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Text('click!'),
+        onPressed: () {},
+        backgroundColor: Colors.yellow[900],
       ),
     );
   }
